@@ -18,4 +18,8 @@ class Base(object):
         e = self.find_element(local)
         e.click()
 
+    def send_text(self, local, text):
+        e = self.find_element(local)
+        e.send_keys(text)
+
 
