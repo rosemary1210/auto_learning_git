@@ -362,9 +362,9 @@ function hide_img(obj){
 </div>
 <div class='heading'>
 <h1>TestReport</h1>
-<p class='attribute'><strong>开始时间:</strong> 2021-08-09 17:04:20</p>
-<p class='attribute'><strong>耗时:</strong> 0:00:11.763000</p>
-<p class='attribute'><strong>状态:</strong> <span class="tj passCase">Pass</span>1</p>
+<p class='attribute'><strong>开始时间:</strong> 2021-08-11 13:55:29</p>
+<p class='attribute'><strong>耗时:</strong> 0:00:02.971000</p>
+<p class='attribute'><strong>状态:</strong> <span class="tj errorCase">Error</span>1</p>
 
 <p class='description'>此报告用于测试快速录入测试</p>
 </div>
@@ -397,35 +397,71 @@ function hide_img(obj){
     <th>错误截图</th>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>test_01.Test_Input</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
     <td>&nbsp;</td>
 </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td><div class='testcase'>test_input_text</div></td>
-    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+<tr id='ft1.1' class='none'>
+    <td ><div class='testcase'>test_input_text</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <span class='status errorCase'>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        错误</a></span>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "e:\learning\Case\test_01.py", line 10, in setUp
+    self.driver = webdriver.Chrome()
+  File "D:\python\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 69, in __init__
+    desired_capabilities=desired_capabilities)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 92, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 179, in start_session
+    response = self.execute(Command.NEW_SESSION, capabilities)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: cannot find Chrome binary
+  (Driver info: chromedriver=70.0.3538.16 (16ed95b41bb05e565b11fb66ac33c660b721f778),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
     <td>无截图</td>
 </tr>
 
 <tr id='total_row'>
     <th>统计</th>
     <th>1</th>
+    <th>0</th>
+    <th>0</th>
     <th>1</th>
-    <th>0</th>
-    <th>0</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
 </tr>
 </table>
 <script>
     showCase(1);
-    drawCircle(1, 0, 0);
+    drawCircle(0, 0, 1);
 </script>
 
 <div id='ending'>&nbsp;</div>
